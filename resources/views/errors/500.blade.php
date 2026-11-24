@@ -1,0 +1,2 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Problème technique</title></head>
+<body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 20px;color:#0B2A3C"><h1>Un problème technique est survenu</h1><p>Le site est momentanément indisponible. Réessayez dans quelques minutes, ou contactez directement l’atelier par téléphone.</p></body></html>

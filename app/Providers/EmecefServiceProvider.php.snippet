@@ -1,0 +1,4 @@
+<?php
+// À ajouter dans app/Providers/AppServiceProvider.php, méthode register() :
+
+$this->app->bind(\App\Invoicing\EmecefClient::class, \App\Invoicing\HttpEmecefClient::class);

@@ -1,0 +1,9 @@
+<?php
+// À ajouter dans routes/console.php
+
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::command('payments:reconcile')->everyFiveMinutes();
+Schedule::command('orders:expire-unpaid')->everyTenMinutes();
+// Le planificateur doit tourner : cron (* * * * * php artisan schedule:run) ou, sous Windows, le Planificateur de tâches.
+Schedule::command('contracts:generate-interventions')->dailyAt('06:00');

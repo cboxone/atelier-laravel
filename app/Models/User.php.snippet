@@ -1,0 +1,26 @@
+<?php
+// Modifications à faire dans app/Models/User.php
+
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+
+class User extends Authenticatable implements FilamentUser
+{
+    // IMPORTANT : ne PAS ajouter 'is_admin' ni 'is_technician' dans $fillable (personne ne doit pouvoir se promouvoir).
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'is_admin' => 'boolean',
+            'is_technician' => 'boolean',
+        ];
+    }
+
+    // Seul un administrateur peut entrer dans le panneau /admin.
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $panel->getId() === 'admin' && $this->is_admin === true;
+    }
+}
